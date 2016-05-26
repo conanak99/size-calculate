@@ -1,0 +1,87 @@
+var area = {
+  eu: "EU",
+  uk: "UK",
+  inter: "International"
+};
+
+var femaleSize = [{
+  eu: 32,
+  uk: 4,
+  inter: "XXS",
+  minBust: 76,
+  maxBust: 78,
+  minWaist: 57,
+  maxWaist: 59,
+  minHip: 82,
+  maxHip: 84
+}, {
+  eu: 34,
+  uk: 6,
+  inter: "XS",
+  minBust: 78.5,
+  maxBust: 81,
+  minWaist: 59.5,
+  maxWaist: 62,
+  minHip: 84.5,
+  maxHip: 86
+}, {
+  eu: 36,
+  uk: 8,
+  inter: "S",
+  minBust: 81.5,
+  maxBust: 84,
+  minWaist: 62.5,
+  maxWaist: 65,
+  minHip: 86.5,
+  maxHip: 89
+}, {
+  eu: 38,
+  uk: 10,
+  inter: "M",
+  minBust: 84.5,
+  maxBust: 89,
+  minWaist: 65.5,
+  maxWaist: 70,
+  minHip: 89.5,
+  maxHip: 94
+}, {
+  eu: 40,
+  uk: 12,
+  inter: "L",
+  minBust: 89.5,
+  maxBust: 94,
+  minWaist: 70.5,
+  maxWaist: 75,
+  minHip: 94.5,
+  maxHip: 99
+}, {
+  eu: 42,
+  uk: 14,
+  inter: "L",
+  minBust: 94.5,
+  maxBust: 99,
+  minWaist: 75.5,
+  maxWaist: 80,
+  minHip: 99.5,
+  maxHip: 104
+}, {
+  eu: 44,
+  uk: 16,
+  inter: "XL",
+  minBust: 99.5,
+  maxBust: 104,
+  minWaist: 80.5,
+  maxWaist: 85,
+  minHip: 104.5,
+  maxHip: 109
+}, {
+  eu: 46,
+  uk: 18,
+  inter: "XL",
+  minBust: 104.5,
+  maxBust: 111,
+  minWaist: 85.5,
+  maxWaist: 92,
+  minHip: 109.5,
+  maxHip: 116
+}];
