@@ -30,7 +30,22 @@
 		<div class="container">
 			<div class="section">
 				<div class="row center">
-					<div class="col s12 l6">
+					<div class="col s12 l4">
+						<h4>Your ethnic group</h4>
+						<div class="col s6">
+							<img src="https://maxcdn.icons8.com/Color/PNG/48/Food/rice_bowl-48.png" title="Rice Bowl" width="48">
+							<br/>
+							<input value="asian" ng-model="ethnic" name="ethnic" type="radio" id="asian"  />
+							<label for="asian">Asian (Smaller size)</label>
+						</div>
+						<div class="col s6">
+							<img src="https://maxcdn.icons8.com/Color/PNG/48/Food/hamburger-48.png" title="Hamburger" width="48">
+							<br/>
+							<input value="non-asian" ng-model="ethnic" name="ethnic" type="radio" id="non-asian"  />
+							<label for="non-asian"> Non-asian</label>
+						</div>
+					</div>
+					<div class="col s12 l4">
 						<h4>Your gender</h4>
 						<div class="col s6">
 							<img src="https://maxcdn.icons8.com/Color/PNG/48/Users/female-48.png" title="Female" width="48">
@@ -45,7 +60,7 @@
 							<label for="male"> Male</label>
 						</div>
 					</div>
-					<div class="col s12 l6">
+					<div class="col s12 l4">
 						<h4>Your country</h4>
 						<div class="col s4">
 							<img src="https://maxcdn.icons8.com/Color/PNG/48/Maps/Great_Britain-48.png" title="Great Britain" width="48">
@@ -137,6 +152,7 @@
 		var app = angular.module("size-calculator", []);
 		app.controller("mainCtrl", ["$scope", function($scope) {
 			//Initial variabes
+			$scope.ethnic = 'non-asian';
 			$scope.gender = 'female';
 			$scope.bust = 80;
 			$scope.waist = 63;
@@ -147,7 +163,7 @@
 			$scope.trouserSize = "";
 
 
-			$scope.$watchGroup(["bust", "waist", "hip", "country"], function() {
+			$scope.$watchGroup(["bust", "waist", "hip", "country", "ethnic"], function() {
 				$scope.calculate();
 			});
 
@@ -163,6 +179,11 @@
 				var hipIndex = _.findIndex(femaleSize, function(size) {
 					return size.minHip <= $scope.hip && $scope.hip <= size.maxHip;
 				});
+
+								
+				if ($scope.ethnic == "asian") {
+					bustIndex--; waistIndex--;hipIndex--;
+				}
 
 				var shirtSize = femaleSize[_.max([bustIndex, waistIndex])];
 				var trouserSize = femaleSize[_.max([waistIndex, hipIndex])];
